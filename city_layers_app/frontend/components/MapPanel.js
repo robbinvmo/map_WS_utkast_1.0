@@ -141,6 +141,12 @@ function clusterRadius(count) {
   return 22;
 }
 
+function distanceMetersLatLon(lat1, lon1, lat2, lon2) {
+  const dLat = (lat1 - lat2) * 111320;
+  const dLon = (lon1 - lon2) * 111320 * Math.cos(((lat1 + lat2) / 2) * (Math.PI / 180));
+  return Math.sqrt(dLat * dLat + dLon * dLon);
+}
+
 export default function MapPanel({
   center,
   points,
@@ -163,9 +169,18 @@ export default function MapPanel({
   const showMarkers = layerMode === "markers" || layerMode === "both" || Boolean(forceShowMarkers);
   const showRegions = layerMode === "regions" || layerMode === "both";
   const markerSource = useMemo(() => {
-    if (!forcedMarkerCategory) return points;
-    return points.filter((p) => p.category === forcedMarkerCategory);
-  }, [points, forcedMarkerCategory]);
+    let next = points;
+    if (forcedMarkerCategory) {
+      next = next.filter((p) => p.category === forcedMarkerCategory);
+    }
+    if (accessCircle?.enabled && accessCircle?.center && Number.isFinite(accessCircle?.radius_m)) {
+      next = next.filter(
+        (p) =>
+          distanceMetersLatLon(p.lat, p.lon, accessCircle.center[0], accessCircle.center[1]) <= accessCircle.radius_m
+      );
+    }
+    return next;
+  }, [points, forcedMarkerCategory, accessCircle]);
   const markerClusters = useMemo(() => {
     if (!showMarkers) return [];
     if (!clusterEnabled) {
