@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Virtual envs
+city_layers_app/.venv/
+city_layers_app/.venv-1/
+
+# Node / Next
+city_layers_app/frontend/node_modules/
+city_layers_app/frontend/.next/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Optional heavy local data cache
+city_layers_app/data/cache/

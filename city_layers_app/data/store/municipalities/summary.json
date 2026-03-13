@@ -1,0 +1,60 @@
+{
+  "source_features_scanned": 26324,
+  "municipalities": [
+    {
+      "name": "Stockholm",
+      "regso_parts_used": 127,
+      "features_written": 7784,
+      "categories": {
+        "public_transport": 3046,
+        "food": 3117,
+        "office": 1621
+      },
+      "file": "C:\\Users\\robbin.modigh\\Documents\\city_layers\\city_layers_app\\data\\store\\municipalities\\stockholm.geojsonl"
+    },
+    {
+      "name": "Lidingö",
+      "regso_parts_used": 13,
+      "features_written": 364,
+      "categories": {
+        "public_transport": 254,
+        "food": 61,
+        "office": 49
+      },
+      "file": "C:\\Users\\robbin.modigh\\Documents\\city_layers\\city_layers_app\\data\\store\\municipalities\\lidingo.geojsonl"
+    },
+    {
+      "name": "Huddinge",
+      "regso_parts_used": 22,
+      "features_written": 632,
+      "categories": {
+        "public_transport": 478,
+        "food": 99,
+        "office": 55
+      },
+      "file": "C:\\Users\\robbin.modigh\\Documents\\city_layers\\city_layers_app\\data\\store\\municipalities\\huddinge.geojsonl"
+    },
+    {
+      "name": "Sundbyberg",
+      "regso_parts_used": 11,
+      "features_written": 315,
+      "categories": {
+        "food": 114,
+        "public_transport": 132,
+        "office": 69
+      },
+      "file": "C:\\Users\\robbin.modigh\\Documents\\city_layers\\city_layers_app\\data\\store\\municipalities\\sundbyberg.geojsonl"
+    },
+    {
+      "name": "Haninge",
+      "regso_parts_used": 28,
+      "features_written": 713,
+      "categories": {
+        "public_transport": 547,
+        "food": 98,
+        "office": 68
+      },
+      "file": "C:\\Users\\robbin.modigh\\Documents\\city_layers\\city_layers_app\\data\\store\\municipalities\\haninge.geojsonl"
+    }
+  ]
+}

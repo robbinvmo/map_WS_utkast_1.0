@@ -1,0 +1,6 @@
+[build]
+  base = "city_layers_app/frontend"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
